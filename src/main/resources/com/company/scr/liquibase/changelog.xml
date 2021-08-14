@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <property name="byte.array.type" dbms="hsqldb" value="BLOB"/>
+    <property name="byte.array.type" dbms="oracle" value="BLOB"/>
+    <property name="byte.array.type" dbms="postgresql" value="bytea"/>
+    <property name="uuid.type" dbms="oracle" value="varchar2(32)"/>
+    <property name="uuid.type" dbms="!oracle" value="uuid"/>
+
+    <includeAll path="/com/company/scr/liquibase/changelog"/>
+
+    <changeSet id="data" author="scr">
+        <sqlFile path="data.sql" relativeToChangelogFile="true" stripComments="true"/>
+        <sqlFile path="test-entities-data.sql" relativeToChangelogFile="true" stripComments="true"/>
+        <sqlFile path="security.sql" relativeToChangelogFile="true" stripComments="true"/>
+    </changeSet>
+
+</databaseChangeLog>
