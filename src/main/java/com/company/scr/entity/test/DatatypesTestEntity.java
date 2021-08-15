@@ -7,6 +7,7 @@ import io.jmix.core.metamodel.annotation.Composition;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 
 import javax.persistence.*;
+import javax.validation.Valid;
 import java.math.BigDecimal;
 import java.time.*;
 import java.util.Date;
@@ -111,6 +112,7 @@ public class DatatypesTestEntity {
     @JoinColumn(name = "COMPOSITION_O2_OATTR_ID")
     protected CompositionO2OTestEntity compositionO2Oattr;
 
+    @Valid
     @Composition
     @OnDelete(DeletePolicy.CASCADE)
     @OneToMany(mappedBy = "datatypesTestEntity")

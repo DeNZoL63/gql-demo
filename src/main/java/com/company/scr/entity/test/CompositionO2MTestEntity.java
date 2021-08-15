@@ -34,7 +34,7 @@ public class CompositionO2MTestEntity {
     protected DatatypesTestEntity datatypesTestEntity;
 
     @Column(name = "QUANTITY")
-    @PositiveOrZero
+    @PositiveOrZero(message = "{msg://com.company.scr.entity.test/CompositionO2MTestEntity.quantity.validation.PositiveOrZero")
     private Integer quantity;
 
     @InstanceName

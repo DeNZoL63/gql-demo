@@ -62,6 +62,7 @@ public class Car {
     protected Boolean wheelOnRight;
 
     @Column(name = "CAR_TYPE", nullable = false)
+    @NotNull(message = "{msg://com.company.scr.entity/carTypeEmpty}", groups = {RestApiChecks.class})
     protected String carType;
 
     @Column(name = "ECO_RANK")
